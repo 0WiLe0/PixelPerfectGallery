@@ -1,66 +1,141 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🖼 PixelPerfectGallery
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+**PixelPerfectGallery** — это дипломный проект, представляющий собой веб-приложение онлайн-галереи для хранения, просмотра и обмена изображениями.  
+Приложение ориентировано на фотографов, художников и творческих людей, которые хотят делиться своими работами и взаимодействовать с другими пользователями.
 
-## About Laravel
+Проект охватывает полный цикл разработки: от технического задания и проектирования базы данных до реализации интерфейса, бизнес-логики и тестирования.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🧠 Описание проекта
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+PixelPerfectGallery — это социальная онлайн-галерея, сочетающая в себе:
 
-## Learning Laravel
+- публикацию изображений
+- персональные профили пользователей
+- ленту постов
+- лайки и комментарии
+- систему друзей
+- личные сообщения
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Основной упор сделан на **визуальный опыт пользователя**, удобство навигации и социальное взаимодействие.
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+---
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## ✨ Основной функционал
 
-## Laravel Sponsors
+### 👤 Пользователи
+- Регистрация и авторизация
+- Профиль пользователя (фото, информация, избранное)
+- Подписки и друзья
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### 🖼 Контент
+- Загрузка изображений
+- Публикация постов
+- Комментарии и лайки
+- Лента постов
 
-### Premium Partners
+### 💬 Социальные функции
+- Личные сообщения
+- Список друзей
+- Поиск пользователей
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[WebReinvent](https://webreinvent.com/)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Jump24](https://jump24.co.uk)**
-- **[Redberry](https://redberry.international/laravel/)**
-- **[Active Logic](https://activelogic.com)**
-- **[byte5](https://byte5.de)**
-- **[OP.GG](https://op.gg)**
+### 🛠 Администрирование
+- Роли пользователей (Администратор / Пользователь)
+- Управление контентом
+- Удаление постов и аккаунтов
 
-## Contributing
+### 📱 UI / UX
+- Адаптивный дизайн
+- Боковое навигационное меню
+- Модальные окна
+- Интерактивные элементы
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+---
 
-## Code of Conduct
+## 🛠 Используемые технологии
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Backend
+- **PHP**
+- **Laravel**
+- **MySQL**
+- MVC архитектура
+- Миграции и ORM
 
-## Security Vulnerabilities
+### Frontend
+- **HTML5**
+- **CSS3**
+- **JavaScript**
+- Blade templates
+- Cropper.js (редактирование изображений)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Инструменты разработки
+- Figma (дизайн)
+- VS Code
+- Emmet
+- Live Server
+- Open Server Panel
 
-## License
+---
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+## 🗄 Архитектура и база данных
+
+### Основные сущности:
+- `users`
+- `images`
+- `posts`
+- `comments`
+- `likes`
+- `friends`
+- `messages`
+- `chats`
+
+Используется нормализованная реляционная структура с внешними ключами и миграциями Laravel.
+
+---
+
+## 🧪 Тестирование
+В рамках дипломного проекта проведено юзабилити-тестирование, в ходе которого были выявлены и исправлены:
+
+ошибки регистрации
+
+некорректное отображение изображений
+
+проблемы с подписками
+
+медленный поиск (оптимизирован через JS)
+
+---
+
+## 🎯 Цель проекта
+Проект создан в рамках дипломной работы по специальности 09.02.07 — Информационные системы и программирование
+и предназначен для демонстрации навыков:
+
+full-stack веб-разработки
+
+проектирования БД
+
+работы с Laravel
+
+UI/UX проектирования
+
+социальной логики приложений
+
+---
+
+## 📌 Возможное развитие
+Масштабирование проекта
+
+Платные аккаунты и подписки
+
+Продажа изображений
+
+Расширенная модерация
+
+Международная версия
+
+---
+
+## 👤 Автор
+Dima (Wile)
+2024
