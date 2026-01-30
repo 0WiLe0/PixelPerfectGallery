@@ -1,0 +1,553 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+button{
+    border: none;
+}
+body{
+    background-color: antiquewhite;
+    height: 100vh;
+    display: flex;
+    background:
+      radial-gradient(black 3px, transparent 4px),
+      radial-gradient(black 3px, transparent 4px),
+      linear-gradient(#dfdfdf 4px, transparent 0),
+      linear-gradient(45deg, transparent 74px, transparent 75px, #c4c4c4 75px, #c4c4c4 76px, transparent 77px, transparent 109px),
+      linear-gradient(-45deg, transparent 75px, transparent 76px, #c4c4c4 76px, #c4c4c4 77px, transparent 78px, transparent 109px),
+      #dfdfdf;
+      background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+/*Курсор*/
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 24px;
+    background-color: black;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/*Изменение темы*/
+.theme{
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 42px;
+    border-radius: 16px;
+}
+.theme_fon{
+    border-radius: 16px;
+    width: 62px;
+    height: 31px;
+    background: #151515de;
+}
+.moon_light{
+    position: absolute;
+    top: 0;
+    right: 31px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31px;
+    height: 31px;
+    border: none;
+    background: #151515;
+    border-radius: 100%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.49), 0 2px 2px 0 rgba(0, 0, 0, 0.43), 0 5px 3px 0 rgba(0, 0, 0, 0.25), 0 9px 4px 0 rgba(0, 0, 0, 0.07), 0 14px 4px 0 rgba(0, 0, 0, 0.01);
+    transition: .2s;
+}
+
+/*Меню*/
+header{
+    position: fixed;
+    z-index: 3;
+    width: 35px;
+}
+
+nav{
+    width: 35px;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0 0 23px;
+}
+nav a{
+    display: flex;
+}
+
+.logo_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.09), 0 5px 3px 0 rgba(0, 0, 0, 0.05), 0 10px 4px 0 rgba(0, 0, 0, 0.01), 0 15px 4px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+
+/* Лого наведение*/
+
+.logo_hover{
+    display: none;
+    position: absolute;
+    top: 7px;
+    left: 63px;
+    z-index: 1;
+}
+.logo_hover span{
+    z-index: 2;
+    position: relative;
+    top: 26px;
+    left: 34px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+}
+.logo:hover .logo_hover{
+    display: block;
+}
+
+/* Профиль наведение */
+.profile_logo{
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 61px;
+}
+.profile_logo span{
+    position: relative;
+    top: 25px;
+    left: 32px;
+}
+.profile:hover .profile_logo{
+    display: block;
+}
+.profile:hover .logo_block{
+    background: #151515;
+}
+.profile:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Лента наведение */
+
+.lenta_hover{
+    display: none;
+    position: absolute;
+    top: 86px;
+    left: 61px;
+}
+.lenta_hover span{
+    position: relative;
+    top: 25px;
+    left: 41px;
+}
+.lenta:hover .lenta_hover{
+    display: block;
+}
+.lenta:hover .logo_block{
+    background: #151515;
+}
+.lenta:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Сообщения наведение */
+
+.messages_hover{
+    display: none;
+    position: absolute;
+    top: 127px;
+    left: 61px;
+}
+.messages_hover span{
+    position: relative;
+    top: 26px;
+    left: 23px;
+}
+.messages:hover .messages_hover{
+    display: block;
+}
+.messages:hover .logo_block{
+    background: #151515;
+}
+.messages:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Друзья наведение */
+
+.friends_hover {
+    display: none;
+    position: absolute;
+    top: 166px;
+    left: 61px;
+}
+.friends_hover span{
+    position: relative;
+    top: 24px;
+    left: 38px;
+}
+.friends:hover .friends_hover{
+    display: block;
+}
+.friends:hover .logo_block{
+    background: #151515;
+}
+.friends:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Настройки наведение */
+
+.settings_hover{
+    display: none;
+    position: absolute;
+    top: 206px;
+    left: 61px;
+}
+.settings_hover span{
+    position: relative;
+    top: 25px;
+    left: 23px;
+}
+.settings:hover .settings_hover{
+    display: block;
+}
+.settings:hover .logo_block{
+    background: #151515;
+}
+.settings:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Главный блок */
+main{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 1100px;
+    margin: 0 auto;
+}
+/*Сообщение*/
+.messege_container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.messege_block{
+    width: 1084px;
+    display: flex;
+    justify-content: space-between;
+}
+.title_mes{
+    color: #151515;
+    text-align: center;
+    font-family: Comfortaa;
+    font-size: 35px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    height: 132px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mes_fren{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 5px;
+    width: 451px;
+    height: 741px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff; 
+} 
+.search_fren{
+    display: flex;
+    height: 120px;
+    justify-content: space-between;
+    align-items: center;
+    width: 421px;
+}
+.search{
+    padding-left: 10px;
+    border-radius: 5px;
+    width: 337px;
+    height: 43px;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.37);
+    background: #fff;
+    border:none;
+    position: relative;
+    z-index: 9;
+}
+.search_send{
+    border-radius: 5px;
+    width: 75px;
+    height: 43px;
+    box-shadow: 0 4px 9px 0 rgba(0, 0, 0, 0.37), 0 16px 16px 0 rgba(0, 0, 0, 0.32);
+    background: #151515;
+    border: none;
+    color:#fff;
+    font-size: 35px;
+    position: relative;
+    z-index: 9;
+}
+.fren_block{
+    position: relative;
+    width: 421px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.fren{
+    border-radius: 5px;
+    width: 388px;
+    height: 67px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18);
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 9px;
+}
+.inf_send{
+    display: flex;
+}
+.frend_img{
+    margin-left: 8px;
+}
+.last_send_m{
+    margin-left: 9px;
+    height: 49px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+.nick{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.last_send{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+
+}
+.last_date_mes{
+    margin-right: 9px;
+    color: #151515;        
+    font-family: Comfortaa;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    display: flex;
+    align-items: flex-end;
+    height: 49px;
+}
+.fren_s{
+    height: 599px;
+    overflow-y: scroll;
+}
+.fren_s::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;
+}   
+/*Сообщения пользователей*/
+.mes_send{
+    border-radius: 5px;
+    width: 623px;
+    height: 741px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+} 
+.mes_send_inf{
+    width: 556px;
+    height: 68px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 5px 11px 0px rgba(0, 0, 0, 0.10);
+}
+.name{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-left: 25px;
+}
+.buttons_send{
+    display: flex;
+    justify-content: space-between;
+    width: 203px;
+    margin-right: 25px;
+}
+.buttons_send a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 95px;
+    height: 34px;
+    border-radius: 5px;
+    background: #151515;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.41), 0px 3px 3px 0px rgba(0, 0, 0, 0.36), 0px 7px 4px 0px rgba(0, 0, 0, 0.21), 0px 13px 5px 0px rgba(0, 0, 0, 0.06), 0px 20px 5px 0px rgba(0, 0, 0, 0.01);
+    color: #FFF;
+    text-align: center;
+    font-family: Comfortaa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.buttons_send img{
+    margin-right: 3px;
+}
+.mes_block_s{
+    width: 556px;
+    height: 591px;
+    overflow-y: scroll;
+
+}
+.m_block{
+    margin-bottom: 15px;
+    width: 277px;
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    background: #FFF;
+    box-shadow: 0px 7px 15px 0px rgba(0, 0, 0, 0.18);
+}
+.inf_mes_prof{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+}
+.inf_mes_prof img{
+    margin-left: 9px;
+}
+.i_mt{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.name_mes_n{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.inf_mes_text{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-left: 9px;
+}
+.last_send_m{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.date_send{
+    height: 29px;
+    display: flex;
+    align-items: flex-end;
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 8px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-right: 5px;
+}
+.send_mes{
+    width: 483px;
+    height: 43px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 9px 0px rgba(0, 0, 0, 0.37), 0px 16px 16px 0px rgba(0, 0, 0, 0.32), 0px 37px 22px 0px rgba(0, 0, 0, 0.19), 0px 66px 26px 0px rgba(0, 0, 0, 0.06), 0px 103px 29px 0px rgba(0, 0, 0, 0.01);
+    border: none;
+    padding-left: 10px;
+    word-break:break-all;
+}
+.btn_mes{
+    width: 58px;
+    height: 43px;
+    border-radius: 10px;
+    background: #151515;
+    box-shadow: 0px 1px 2px 0px rgba(0, 0, 0, 0.88), 0px 4px 4px 0px rgba(0, 0, 0, 0.77), 0px 9px 5px 0px rgba(0, 0, 0, 0.45), 0px 15px 6px 0px rgba(0, 0, 0, 0.13), 0px 24px 7px 0px rgba(0, 0, 0, 0.02);
+    border: none;
+}
+.mes_block_m{
+    min-height: 556px ;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+.your_mes{
+    width: 100%;
+    display: flex;
+    justify-content: start;
+}
+.my_mes{
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+}
+.mes_block_s::-webkit-scrollbar {
+    width: 0px;             /* ширина scrollbar */
+}
+.mes_block_s::-webkit-scrollbar-track {
+    background: transparent;        /* цвет дорожки */
+}
+.mes_block_s::-webkit-scrollbar-thumb {
+    width: 0px;
+    height: 39px;
+    background: #151515;   /* цвет плашки */
+}
+.last_send_mes{
+    color: #151515;
+    font-family: Comfortaa;
+    font-size: 9px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    word-break:break-all;
+    margin-bottom: 5px;
+}

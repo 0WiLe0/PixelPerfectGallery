@@ -1,0 +1,1126 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+body{
+    background-color: antiquewhite;
+    height: 100vh;
+    display: flex;
+    background:
+      radial-gradient(black 3px, transparent 4px),
+      radial-gradient(black 3px, transparent 4px),
+      linear-gradient(#dfdfdf 4px, transparent 0),
+      linear-gradient(45deg, transparent 74px, transparent 75px, #c4c4c4 75px, #c4c4c4 76px, transparent 77px, transparent 109px),
+      linear-gradient(-45deg, transparent 75px, transparent 76px, #c4c4c4 76px, #c4c4c4 77px, transparent 78px, transparent 109px),
+      #dfdfdf;
+      background-size: 109px 109px, 109px 109px,100% 6px, 109px 109px, 109px 109px;
+      background-position: 54px 55px, 0px 0px, 0px 0px, 0px 0px, 0px 0px;
+}
+
+/*Курсор*/
+.circle {
+    height: 15px;
+    width: 15px;
+    border-radius: 24px;
+    background-color: #151515;
+    position: fixed; 
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 99999999; /* so that it stays on top of all other elements */
+}
+
+/*Изменение темы*/
+.theme{
+    border: none;
+    position: absolute;
+    top: 10px;
+    right: 42px;
+    border-radius: 16px;
+}
+.theme_fon{
+    border-radius: 16px;
+    width: 62px;
+    height: 31px;
+    background: #151515de;
+}
+.moon_light{
+    position: absolute;
+    top: 0;
+    right: 31px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 31px;
+    height: 31px;
+    border: none;
+    background: #151515;
+    border-radius: 100%;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.49), 0 2px 2px 0 rgba(0, 0, 0, 0.43), 0 5px 3px 0 rgba(0, 0, 0, 0.25), 0 9px 4px 0 rgba(0, 0, 0, 0.07), 0 14px 4px 0 rgba(0, 0, 0, 0.01);
+    transition: .2s;
+}
+
+/*Меню*/
+header{
+    position: fixed;
+    z-index: 3;
+    width: 35px;
+}
+
+nav{
+    width: 35px;
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 25px 0 0 23px;
+}
+nav a{
+    display: flex;
+}
+
+.logo_block{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.09), 0 5px 3px 0 rgba(0, 0, 0, 0.05), 0 10px 4px 0 rgba(0, 0, 0, 0.01), 0 15px 4px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+
+/* Лого наведение*/
+
+.logo_hover{
+    display: none;
+    position: absolute;
+    top: 7px;
+    left: 63px;
+    z-index: 1;
+}
+.logo_hover span{
+    z-index: 2;
+    position: relative;
+    top: 26px;
+    left: 34px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+}
+.logo:hover .logo_hover{
+    display: block;
+}
+
+/* Профиль наведение */
+.profile_logo{
+    display: none;
+    position: absolute;
+    top: 46px;
+    left: 61px;
+}
+.profile_logo span{
+    position: relative;
+    top: 25px;
+    left: 32px;
+}
+.profile:hover .profile_logo{
+    display: block;
+}
+.profile:hover .logo_block{
+    background: #151515;
+}
+.profile:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Лента наведение */
+
+.lenta_hover{
+    display: none;
+    position: absolute;
+    top: 86px;
+    left: 61px;
+}
+.lenta_hover span{
+    position: relative;
+    top: 25px;
+    left: 41px;
+}
+.lenta:hover .lenta_hover{
+    display: block;
+}
+.lenta:hover .logo_block{
+    background: #151515;
+}
+.lenta:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Сообщения наведение */
+
+.messages_hover{
+    display: none;
+    position: absolute;
+    top: 127px;
+    left: 61px;
+}
+.messages_hover span{
+    position: relative;
+    top: 26px;
+    left: 23px;
+}
+.messages:hover .messages_hover{
+    display: block;
+}
+.messages:hover .logo_block{
+    background: #151515;
+}
+.messages:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Друзья наведение */
+
+.friends_hover {
+    display: none;
+    position: absolute;
+    top: 166px;
+    left: 61px;
+}
+.friends_hover span{
+    position: relative;
+    top: 24px;
+    left: 38px;
+}
+.friends:hover .friends_hover{
+    display: block;
+}
+.friends:hover .logo_block{
+    background: #151515;
+}
+.friends:hover .logo_block svg path{
+    fill: #fff;
+}
+/* Настройки наведение */
+
+.settings_hover{
+    display: none;
+    position: absolute;
+    top: 206px;
+    left: 61px;
+}
+.settings_hover span{
+    position: relative;
+    top: 25px;
+    left: 23px;
+}
+.settings:hover .settings_hover{
+    display: block;
+}
+.settings:hover .logo_block{
+    background: #151515;
+}
+.settings:hover .logo_block svg path{
+    fill: #fff;
+}
+/*Твои фотографии наведение*/
+.profinbut_hov{
+    display: none;
+}
+.profinbut_text{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 14px;
+    right: 60px;
+    z-index: 2;
+}
+.profinbut_bg{
+    position: absolute;
+    top: 5px;
+    right: 45px;
+    z-index: 1;
+}
+.profimgbut:hover{
+    background-color: #151515;
+}
+.profimgbut:hover .profinbut_hov{
+    display: flex;
+}
+.profimgbut:hover .profimgbut_ico path{
+    fill:#fff;
+}
+/*Твои фотографии наведение*/
+.like_set_hov{
+    display: none;
+}
+.like_set_text{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 57px;
+    right: 60px;
+    z-index: 2;
+}
+.like_set_bg{
+    position: absolute;
+    top: 48px;
+    right: 45px;
+    z-index: 1;
+}
+.like_set:hover{
+    background-color: #151515;
+}
+.like_set:hover .like_set_hov{
+    display: flex;
+}
+.like_set:hover .like_set_ico path{
+    fill:#fff;
+}
+/* Главный блок */
+main{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    width: 1148px;
+    margin: 0 auto;
+}
+/*Профиль*/
+.profile_main{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.profile_container{
+    width: 100%;
+    height: 100%;
+}
+.block_profile{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: end;
+    border-radius: 10px;
+    width: 521px;
+    height: 914px;
+    box-shadow: -3px 5px 14px 0 rgba(0, 0, 0, 0.22), -13px 22px 25px 0 rgba(0, 0, 0, 0.19), -30px 49px 34px 0 rgba(0, 0, 0, 0.11), -52px 87px 41px 0 rgba(0, 0, 0, 0.03), -82px 136px 44px 0 rgba(0, 0, 0, 0);
+    background: #f2f2f2;
+}
+.profile_container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 448px;
+    height: 669px;
+}
+.avatar{
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    width: 230px;
+    height: 230px;
+}
+.info{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.nick_name{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+}
+.name, .email, .numimg{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    color: #000;
+}
+.numsub{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #000;
+    margin-top: 42px;
+    margin-bottom: 105px;
+}
+
+.sendmes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comfortaa", sans-serif;
+    border:none;
+    font-weight: 700;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 448px;
+    height: 50px;
+    background: #101010;
+}
+.botbut{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 38px;
+    margin-top: 11px;
+}
+.addfr, .sub{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 216px;
+    height: 50px;
+    background: #101010;
+}
+.expfr{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 216px;
+    height: 50px;
+    background: #1d1d1d;
+    
+}
+.delfr{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 216px;
+    height: 50px;
+    background: #8a3e3e;
+}
+.delsub{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    border: none;
+    font-size: 16px;
+    text-align: center;
+    color: #fff;
+    border-radius: 5px;
+    width: 216px;
+    height: 50px;
+    background: #8a3e3e;
+}
+/*Карточки с фото*/
+.cards{
+    width: 52%;
+}
+.cards_scroll{
+    overflow-y: scroll;
+    width: 100%;
+    height: 914px;
+}
+.cards_scroll::-webkit-scrollbar { /* chrome based */
+    width: 0px;  /* ширина scrollbar'a */
+    background: transparent;
+} 
+.cards_container{
+    width: 100%;
+}
+.cards_block_profile{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.cards_block_like{
+    width: 100%;
+    display: none;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.add_card{
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+    width: 286px;
+    height: 310px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+    margin-bottom: 15px;
+}
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 10px;
+    width: 286px;
+    height: 310px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+    margin-bottom: 15px;
+}
+.card_bg{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    width: 262px;
+    height: 262px;
+    margin-top: 12px;
+    background: linear-gradient(180deg, #1b1b1b 0%, #010101 100%);
+}
+.card_bg span{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 17px;
+    text-align: center;
+    color: #fff;
+}
+
+.card_img{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    justify-content: end;
+    border-radius: 5px;
+    width: 262px;
+    height: 262px;
+    margin-top: 12px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+.card_img_bot{
+    margin-bottom: 8px;
+    margin-right: 12px;
+}
+.card_img_bot{
+    display: flex;
+    justify-content: space-between;
+    width: 93px;
+}
+.card_img_bot span{
+    display: flex;
+    align-items: center;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 11px;
+    text-align: center;
+    color: #fff;
+}
+.like svg, .com svg{
+    margin-right: 3px;
+}
+
+.card_bot{
+    width: 90%;
+    height: 36px;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+}
+.card_bot span{
+    display: block;
+    border-radius: 50%;
+    width: 8px;
+    height: 8px;
+    background-color:  #151515;
+    margin-left: 3px;
+}
+/*Настройки фото*/
+.set_card{
+    position: absolute;
+    top: 438px;
+    right: 172px;
+}
+.set_but{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    border-radius: 5px;
+    width: 53px;
+    height: 102px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+.set_inf{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 54px;
+    height: 26px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+    margin-top: 6px;
+}
+.circle_bg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    width: 34px;
+    height: 18px;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.09), 0 5px 3px 0 rgba(0, 0, 0, 0.05), 0 10px 4px 0 rgba(0, 0, 0, 0.01), 0 15px 4px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+.cicle_set{
+    width: 4px;
+    height: 4px;
+    background-color: #151515;
+    background-repeat: 50%;
+    margin-left: 3px; 
+}
+
+.profimgbut{
+    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    border:none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.09), 0 5px 3px 0 rgba(0, 0, 0, 0.05), 0 10px 4px 0 rgba(0, 0, 0, 0.01), 0 15px 4px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+.like_set{
+    border-radius: 5px;
+    width: 34px;
+    height: 34px;
+    border:none;
+    box-shadow: 0 1px 1px 0 rgba(0, 0, 0, 0.1), 0 2px 2px 0 rgba(0, 0, 0, 0.09), 0 5px 3px 0 rgba(0, 0, 0, 0.05), 0 10px 4px 0 rgba(0, 0, 0, 0.01), 0 15px 4px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+/* Блок с автором */
+.block_author_full{
+    position: absolute;
+    z-index: 27;
+    bottom: 105px;
+    right: 253px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 310px;
+    height: 104px;
+    background: #fff;
+}
+.avatar_author{
+    margin-left: 18px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 57px;
+    height: 57px;
+    border-radius: 50%;
+}
+.author_info{
+    display: flex;
+    flex-direction: column;
+    margin-left: 15px;
+}
+.nickname{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #151515;
+}
+.name, .subcol{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: left;
+    color: #000;
+}
+/* Полное фото */
+.pop_up{
+    position: absolute;
+    z-index: 25;
+    width: 100vw;
+    height: 100vh;
+    display: none;
+    justify-content: center;
+    align-items: center;
+}
+.pop_up_bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(85, 85, 85, 0.9);
+}
+.close_pop_up{
+    border-radius: 5px;
+    width: 46px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 25px;
+    height: 51px;
+    color:#fff;
+    background: #101010;
+}
+.pop_up_fullimg{
+    position: absolute;
+    top: 94px;
+    left: 246px;
+    z-index: 26;
+    border-radius: 10px;
+    width: 1149px;
+    height: 749px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.close_pop_up{
+    position: absolute;
+    z-index: 28;
+    right: 252px;
+    top: 103px;
+}
+/* ВЫход из аккаунта */
+.logout{
+    position: absolute;
+    bottom: 14px;
+    right: 44px;
+
+}
+.logout_btn{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    width: 62px;
+    height: 62px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18), 0 27px 27px 0 rgba(0, 0, 0, 0.15), 0 60px 36px 0 rgba(0, 0, 0, 0.09), 0 107px 43px 0 rgba(0, 0, 0, 0.03), 0 167px 47px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+
+/* Редакттировать профиль */
+
+.red_block{
+    position: absolute;
+    top: 14px;
+    left: 27%;
+    z-index: 6;
+    border-radius: 10px;
+    width: 817px;
+    height: 914px;
+    box-shadow: -3px 5px 14px 0 rgba(0, 0, 0, 0.22), -13px 22px 25px 0 rgba(0, 0, 0, 0.19), -30px 49px 34px 0 rgba(0, 0, 0, 0.11), -52px 87px 41px 0 rgba(0, 0, 0, 0.03), -82px 136px 44px 0 rgba(0, 0, 0, 0);
+    background: #f2f2f2;
+}
+.red_bgr{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 5;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(85, 85, 85, 0.9);
+}
+.close_red{
+    cursor: pointer;
+    position: absolute;
+    right: 6px;
+    top: 5px;
+}
+.top_red_block{
+    display: flex;
+    justify-content: space-around;
+}
+.title_red{
+    width: 381px;
+    margin: 0 auto;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 30px;
+    text-align: center;
+    color: #101010;
+    margin-bottom: 53px;
+    margin-top: 26px;
+}
+.avater_red_hover{
+    width: 230px;
+    height: 230px;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+}
+
+.avater_red_hover:hover .hover_avatar_bg{
+    cursor: pointer;
+    display: flex;
+}
+
+.hover_avatar_bg{
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    background: rgba(16, 16, 16, 0.7);
+}
+.pluse{
+    margin-top: 18%;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    text-align: center;
+    color: #fff;
+}
+.pluse_text{
+    width: 170px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    text-align: center;
+    color: #fff;
+}
+
+.auth_com_cominp{
+    height: 230px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.auth_block_red{
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    width: 371px;
+    height: 104px;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.07), 0 9px 9px 0 rgba(0, 0, 0, 0.06), 0 21px 13px 0 rgba(0, 0, 0, 0.04), 0 38px 15px 0 rgba(0, 0, 0, 0.01), 0 59px 16px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+.avatar_author_red{
+    width: 57px;
+    height: 57px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 50%;    
+    margin-left: 18px;
+    margin-right: 15px;
+}
+
+.author_info{
+    display: flex;
+    flex-direction: column;
+}
+.author_nickname{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    color: #000;
+}
+.author_fio{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+}
+.author_subcol{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    color: #000;
+}
+
+.com_block_red{
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    width: 371px;
+    height: 62px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.16), 0 4px 4px 0 rgba(0, 0, 0, 0.14), 0 8px 5px 0 rgba(0, 0, 0, 0.08), 0 15px 6px 0 rgba(0, 0, 0, 0.02), 0 23px 6px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+.comments_avatar{
+    border-radius: 5px;
+    width: 43px;
+    height: 43px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-left: 12px;
+    margin-right: 5px;
+}
+.comment_info{
+    display: flex;
+    flex-direction: column;
+}
+.red_com_ncikname{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+}
+.red_com_comment_text{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #000;
+}
+.red_com_datecomment{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 10px;
+    color: #000;
+}
+
+.send_com_form{
+    display: flex;
+}
+.avatar_author_block{
+    border-radius: 5px;
+    width: 40px;
+    height: 44px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18);
+    background: #fff;
+    margin-right: 5px;
+}
+.avatar_author_img{
+    border-radius: 100px;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+.send_com_form input{
+    border-radius: 5px;
+    padding-left: 6px;
+    width: 325px;
+    height: 44px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18);
+    background: #fff;
+    border: none;
+    resize: none;
+}
+.send_com_form input::placeholder{
+    padding-top: 13px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    color: #000;
+}
+
+.red_form{}
+.red_form_block{
+    display: flex;
+    justify-content: space-around;
+}
+.title_red_form{
+    margin-top: 51px;
+    width: 469px;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 25px;
+    text-align: center;
+    color: #101010;
+}
+.form_red_send{
+    height: 393px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+.form_red_send input{
+    border: none;
+    border-radius: 5px;
+    padding-left: 6px;
+    width: 370px;
+    height: 44px;
+    box-shadow: 0 7px 15px 0 rgba(0, 0, 0, 0.18);
+    background: #fff;
+}
+.nickname_red{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #101010;
+}
+.fio_red{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #101010;
+}
+.email_red{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #101010;
+}
+.btn_red{
+    border: none;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 5px;
+    width: 376px;
+    height: 44px;
+    background: #101010;
+}
+
+.form_red_send_inf{
+    height: 235px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.tent_block{
+    border-radius: 10px;
+    width: 220px;
+    height: 375px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: -3px 5px 14px 0 rgba(0, 0, 0, 0.22);
+    background: #fff;
+}
+.avatar_tent{
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 300px;
+    width: 103px;
+    height: 103px;
+    margin-top: 45px;
+}
+.tent_nickname{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #000;
+    margin-top: 29px;
+}
+.tent_fio{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    margin-top: 9px;
+}
+.tent_email{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    margin-top: 12px;
+}
+.tent_photo_count{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    text-align: center;
+    color: #000;
+    margin-top: 13px;
+}
+.tent_sub_count{
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 15px;
+    text-align: center;
+    color: #000;
+    margin-top: 49px;
+}
+
+#red_img_inp_file{
+    display: none;
+}
+
+.reset_red_img{
+    cursor: pointer;
+    border:none;
+    width: 116px;
+    height: 31px;
+    border-radius: 5px;
+    box-shadow: -3px 5px 14px 0 rgba(0, 0, 0, 0.22);
+    background: #fff;
+    margin-top: 15px;
+}
+
+.avatar_red_block{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.bnt_send_res{
+    display: flex;
+    justify-content: space-between;
+}
+.btn_red_inf{
+    cursor: pointer;
+    border: none;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 5px;
+    width: 320px;
+    height: 44px;
+    background: #242424;
+}
+.btn_red_inf_res{
+    cursor: pointer;
+    border: none;
+    font-family: "Comfortaa", sans-serif;
+    font-weight: 700;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 5px;
+    width: 44px;
+    height: 44px;
+    background: #773f3f;
+}
+
+#btn_red_profile{
+    cursor:pointer;
+    position: absolute;
+    top: 21px;
+    left: 711px;
+    border:none;
+    border-radius: 5px;
+    width: 47px;
+    height: 47px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15), 0 3px 3px 0 rgba(0, 0, 0, 0.13), 0 6px 4px 0 rgba(0, 0, 0, 0.08), 0 11px 5px 0 rgba(0, 0, 0, 0.02), 0 18px 5px 0 rgba(0, 0, 0, 0);
+    background: #fff;
+}
+
